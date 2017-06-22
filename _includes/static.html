@@ -1,0 +1,49 @@
+    <!-- Header -->
+    <header id="static">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                        {% if page.header_image == "yes" %}
+                        <img class="img-responsive" src="{{ site.header_img.url }}" {% if site.header_img.width %}width="{{ site.header_img.width }}"{% endif %} alt="{{ site.title }}">
+                        {% elsif page.header_image %}
+                        <img class="img-responsive" src="{{ page.header_image }}" {% if page.header_image_width %}width="{{ page.header_image_width }}"{% endif %} alt="{{ site.title }}">
+                        {% endif %}
+                    <div class="intro-text">
+                        <span class="name">{{ page.title }}</span>
+                        <hr class="{{ page.title_line_icon }}-light">
+                    </div>
+                    <div class="row">
+                        {% if page.twine_social.show == "true" %}
+                        <!-- Twine Social Plugin -->
+                        <script id="twine-script" src="{{ page.twine_social.url }}"></script>
+                        <!-- End Twine Social Plugin -->
+                        {% endif %}
+                        <div class="col-lg-10 col-lg-offset-1 text-center" id="static-description">
+                            {% for description in page.description %}
+                            <span class="skills">{{ description.line }}</span>
+                            {% endfor %}
+                        </div>
+                        {% for description_columns in page.description_columns %}
+                        <div class="col-lg-4" id="static-description">
+                            {{ description_columns.column }}
+                        </div>
+                        {% endfor %}
+                        <div class="col-lg-8 col-lg-offset-2 text-center" id="static-description">
+                            {% for description2 in page.description2 %}
+                            <span class="skills">{{ description2.line }}</span>
+                            {% endfor %}
+                        </div>
+                        {% if page.page_button.text %}
+                        <div class="col-lg-8 col-lg-offset-2 text-center">
+                            <div class="page-scroll">
+                                <a href="#{{ page.page_button.url }}" class="btn btn-lg btn-outline">
+                                    <i class="fa fa-{{ page.page_button.icon }}"></i> {{ page.page_button.text }}
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

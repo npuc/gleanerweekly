@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteOptions inherit
+Options -Indexes
+ErrorDocument 403 /404

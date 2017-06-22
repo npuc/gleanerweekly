@@ -1,0 +1,33 @@
+
+    <!-- Recent Grid Section -->
+    <section id="recent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Recent Issues</h2>
+                    <hr class="newspaper-primary">
+                </div>
+            </div>
+                <script type="text/javascript">
+
+                    var rssfeed=new gfeedfetcher("rssfeed", "row", "#portfolioModal")
+                    {% if site.rss.mailchimp == "yes" %}rssfeed.addFeed("{{ site.title }}", "http://{{ site.mailchimp.archive_url }}/feed?u={{ site.mailchimp.user_id }}&id={{ site.mailchimp.list_id }}") //Specify "label" plus URL to RSS feed
+                    {% elsif site.rss.atom == "yes" %}rssfeed.addFeed("{{ site.title }}", "{{ site.rss.feed }}", "atom") //Specify "label" plus URL to RSS feed
+                    {% else %}rssfeed.addFeed("{{ site.title }}", "{{ site.rss.feed }}") //Specify "label" plus URL to RSS feed
+                    {% endif %}
+                    rssfeed.displayoptions("date") //show the specified additional fields
+                    rssfeed.limitlength("strip", "titlefield")
+                    rssfeed.setentrycontainer("div", "col-sm-4 recent-item") //Display each entry as a div (div element)
+                    rssfeed.definetemplate("<a class='recent-link' data-toggle='modal' data-src='{url}' href='{url}' alt='{title}'><div class='recent-rss-link-title'>{title}<br><p>{date}</p></div><div class='caption'><div class='caption-content'><i class='fa fa-search-plus fa-3x'></i></div></div><img alt='{title}' class='img-responsive' src='{{ site.rss.bg_img }}'></a>")
+                    rssfeed.filterfeed({{ site.rss.display }}, "{{ site.rss.sort }}") //Show 10 entries, sort by date
+                    rssfeed.init() //Always call this last
+                </script>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div class="page-scroll">
+                    <a href="{% if site.rss.mailchimp == "yes" %}//{{ site.mailchimp.archive_url }}/home/?u={{ site.mailchimp.user_id }}&id={{ site.mailchimp.list_id }}{% else %}{{ site.rss.more_url }}{% endif %}" class="btn btn-lg btn-outline2" target="_blank">
+                        <i class="fa fa-inbox"></i> More Issues
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>

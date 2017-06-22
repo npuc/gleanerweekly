@@ -1,0 +1,201 @@
+# Site settings
+title: GleanerWeekly
+email: example@gleanerweekly.com
+url: gleanerweekly.com
+domain: gleanerweekly
+tld: com
+description: "GleanerWeekly is a weekly email summary of Adventist news from the Northwest and beyond. Sign-up today and don't miss another edition!"
+skills: "<em>GleanerWeekly</em> is a weekly email summary of Adventist news from the Northwest and beyond. Sign-up today and don't miss another edition!"
+meta_author: GleanerWeekly
+header_img:
+  url: /img/gw_circle.svg
+  width: 192
+#logo:
+#paginate: 5 # The number of posts to show per page on your homepage
+
+# Where things are
+source:       .
+destination:  ./_site
+plugins_dir:  ./_plugins
+layouts_dir:  ./_layouts
+pages:        ./_pages
+data_dir:     ./_data
+includes_dir: ./_includes
+collections:  null
+
+# Plugins
+whitelist: []
+gems:
+  - jekyll-auto-image
+  - emoji_for_jekyll
+  - rails_real_favicon
+  - jekyll-email-protect
+  - jekyll-sitemap
+#  - jekyll_version_plugin
+#  - project_version_tag
+# emoji: true
+
+#Default image for all pages/posts
+image: /img/gw.png
+
+#Google Analytics
+google_analytics:
+  UA: UA-12345678-9 #GleanerWeekly.com Google Analytics UA
+  domains: gleanerweekly.com #Domain associated with UA in Google Analytics
+
+# Google webmaster tools
+google_verify: abcd_efghijk_lmnopqrstuvwxyz
+
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify: 1A2B3C4D5F6G7H8I9J1K2L3M4M5O6P7Q
+
+#Oh great and mighty search enginge Robots, hear my powerful roar!
+googlebot: 'index, follow'
+robots: 'index, follow'
+
+##EXPERIMENTAL IDEAS##
+#Enable Accelerated Mobile Page. Enter "yes" in the amp field below. !! THIS FEATURE IS NOT FINISHED !!
+amp:
+
+##Enable AddToHomeScreen. Enter "yes" in the amp field below. !! THIS FEATURE IS NOT FINISHED !! https://github.com/cubiq/add-to-homescreen
+addtohomescreen:
+
+#Favicon Generate from realfavicongenerator.net
+favicon:
+  #Favicon version number — use if your site previously had a favicon
+  version: lkknpQpb2j
+  #Favicons for various devices and sizes
+  apple-touch-icon-57x57: /img/favicons/apple-touch-icon-57x57.png
+  apple-touch-icon-60x60: /img/favicons/apple-touch-icon-60x60.png
+  apple-touch-icon-72x72: /img/favicons/apple-touch-icon-72x72.png
+  apple-touch-icon-76x76: /img/favicons/apple-touch-icon-76x76.png
+  apple-touch-icon-114x114: /img/favicons/apple-touch-icon-114x114.png
+  apple-touch-icon-120x120: /img/favicons/apple-touch-icon-120x120.png
+  apple-touch-icon-144x144: /img/favicons/apple-touch-icon-144x144.png
+  apple-touch-icon-152x152: /img/favicons/apple-touch-icon-152x152.png
+  apple-touch-icon-180x180: /img/favicons/apple-touch-icon-180x180.png
+  194x194: /img/favicons/favicon-194x194.png
+  96x96: /img/favicons/favicon-96x96.png
+  32x32: /img/favicons/favicon-32x32.png
+  16x16: /img/favicons/favicon-16x16.png
+  android-chrome-192x192: /img/favicons/android-chrome-192x192.png
+  #Favicon manifest
+  manifest: /img/favicons/manifest.json
+  safari-pinned-tab: /img/favicons/safari-pinned-tab.svg
+  safari-pinned-tab-color: 00bcc6
+  default: /img/favicons/favicon.ico
+#Mobile Application Name. If none given, site.title will be used
+apple-mobile-web-app-title: 
+application-name: 
+#Windows 8 & 10 tile color
+#Also used in the browser config xml
+msapplication-TileColor: 5a5a5a
+msapplication-TileImage: /img/favicons/mstile-144x144.png
+mstile:
+  square70x70logo: /img/favicons/mstile-70x70.png
+  square150x150logo: /img/favicons/mstile-150x150.png
+  square310x310logo: /img/favicons/mstile-310x310.png
+  wide310x150logo: /img/favicons/mstile-310x150.png
+msapplication-config: /img/favicons/browserconfig.xml
+#Chrome browser on Android bar color
+theme-color: 5a5a5a
+#iPad retina portrait startup images
+apple-touch-startup-image:
+  1536x2008: /img/favicons/apple-touch-startup-image-1536x2008.png
+  1496x2048: /img/favicons/apple-touch-startup-image-1496x2048.png
+  768x1004: /img/favicons/apple-touch-startup-image-768x1004.png
+  748x1024: /img/favicons/apple-touch-startup-image-748x1024.png
+  1242x2148: /img/favicons/apple-touch-startup-image-1242x2148.png
+  1182x2208: /img/favicons/apple-touch-startup-image-1182x2208.png
+  750x1294: /img/favicons/apple-touch-startup-image-750x1294.png
+  640x1096: /img/favicons/apple-touch-startup-image-640x1096.png
+  640x920: /img/favicons/apple-touch-startup-image-640x920.png
+  320x460: /img/favicons/apple-touch-startup-image-320x460.png
+
+# Contact form:
+# - static : pass through formspree.io to validate email sending
+# - disqus : replace contact form by disqus thread
+# - comment the line below if you want to stick with the default PHP contact form
+contact: static
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 00bcc6 #80B3FF #18bc9c
+  primary-rgb: "0,188,198" #"128,179,255" #"24,288,156"
+  primary-dark: 00a4ad
+  secondary: e9cf86 #FD6E8A #2c3e50
+  secondary-dark: e5c670 #c62d1f #f24537 #A2122F #233140
+  third: 5a5a5a
+
+# Footer settings
+footer:
+  copyright: <a href="//npuc.org/">North Pacific Union Conference of Seventh-day Adventists</a> 
+  location: Contact
+  social: Social Channels
+  credits: Info
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: https://twitter.com/gleanernow
+  - title: facebook
+    url: https://facebook.com/gleanernow
+  - title: instagram
+    url: https://instagram.com/gleanernow
+  - title: google-plus
+    url: https://plus.google.com/+GleanerNow
+  - title: pinterest
+    url: https://pinterest.com/gleanernow
+
+#Social Media usernames, ids, pixel codes and tags
+twitter_username: gleanernow
+fb_app_id: 564738291029385
+fb_admins:
+  - id: 1234567890 #Anthony White
+  - id: 987654321 #Steve Vistaunet
+fb_pixel: 1029384756019283 #GleanerNow Facebook Ad Account Pixel Code
+twitter_ua_tag: zyxwv #@GleanerNow Twitter universal website tag #Twitter conversion tracking
+facebook_url: 'https://facebook.com/gleanernow'
+google_plus_url: https://plus.google.com/+GleanerNow
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: Share your thoughts about <em>GleanerWeekly</em> today!
+  - line: <a href="//gleanernow.com/contact">Email Us</a>
+
+# Credits content
+credits: '<em>GleanerWeekly</em> is published by the <a href="//npuc.org/">North Pacific Union Conference of Seventh-day Adventists</a>.'
+
+# MailChimp Embedded Form Action POST URL. Obtained from Mailchimp>List>[Name of List]>Signup forms>Embedded Forms>Naked>raw HTML. Looks like this: //gleanerweekly.us6.list-manage.com/subscribe/post?u=12a34bc5de67fg89012hi34jk&amp;id=9z8yxwv7654
+mailchimp:
+  # Only paste the Mailchimp Form Action POST domain name in the form_url field. Should look similar to this: gleanerweekly.us6.list-manage.com
+  form_url: gleanerweekly.us6.list-manage.com
+  # Only paste the MailChimp user ID in the user_id field. Should look similar to this: 12a34bc5de67fg89012hi34jk
+  user_id: 12a34bc5de67fg89012hi34jk
+  # Only paste the MailChimp list ID in the list field. Should look similar to this: 9z8yxwv7654
+  list_id: 9z8yxwv7654
+  #Obtained from Mailchimp>List>[Name of List]>Signup forms>General Forms>Forms and response emails drop-down>Campaign archive page. Should look similar to this: http://us6.campaign-archive1.com/home/?u=12a34bc5de67fg89012hi34jk&id=9z8yxwv7654. However, only the domain name should be entered into the archive_url field below. Like this: us6.campaign-archive2.com
+  archive_url: us6.campaign-archive2.com
+
+rss:
+  #Is this feed from Mailchimp? If it is, use "yes" in the mailchimp field below. Otherwise, leave blank.
+  mailchimp: "yes"
+  #RSS feed url. If the feed is from MailChimp, the RSS feed will automatically be entered if rss.mailchimp field, above, is set to "yes". If this is not a MailChimp feed, leave rss.mailchimp field blank and enter the feed URL below in the rss.feed field.
+  feed: 
+  #Atom feed. Use "yes" to if the feed is an Atom feed. Otherwise, leave blank.
+  atom: 
+  #Sort the RSS feed items by ... "date" or "title".
+  sort: date
+  #Number of RSS items to display. Has to be an integer.
+  display: 6
+  #Background image to use on each RSS div item.
+  bg_img: /img/gw_dark.svg
+  #The URL to enter where users can read more issues, past the display number set above. If the feed is Mailchimp, use "yes" in the rss.mailchimp field above, make sure you have a mailchimp.archive_url entered and leave the rss.more_url field, below, blank. If it is not a MailChimp link, leave the rss.mailchimp field above blank and enter the URL to more issues in the rss.more_url field below.
+  more_url: 
+
+includes_copy:
+  about: Stay in touch with Adventist Church breaking news, intriguing video links and updated calendar events from around the Northwest and beyond with <em>GleanerWeekly</em>, our award-winning news summary sent once a week, or as breaking news happens.
+
+# Build settings
+markdown: kramdown
+permalink: pretty

@@ -1,0 +1,42 @@
+{
+    "master_picture": "img/favicon.png",
+    "favicon_design": {
+        "ios": {
+            "picture_aspect": "background_and_margin",
+            "background_color": "#5a5a5a",
+            "margin": "14%",
+            "app_name": "GleanerWeekly.com"
+        },
+        "desktop_browser": [
+
+        ],
+        "windows": {
+            "picture_aspect": "no_change",
+            "background_color": "#5a5a5a",
+            "on_conflict": "override",
+            "app_name": "GleanerWeekly.com"
+        },
+        "android_chrome": {
+            "picture_aspect": "background_and_margin",
+            "margin": "13%",
+            "background_color": "#5a5a5a",
+            "theme_color": "#5a5a5a",
+            "manifest": {
+                "name": "GleanerWeekly",
+                "start_url": "http:\/\/gleanerweekly.com",
+                "display": "standalone",
+                "orientation": "not_set",
+                "on_conflict": "override",
+                "declared": true
+            }
+        },
+        "safari_pinned_tab": {
+            "picture_aspect": "silhouette",
+            "theme_color": "#00bcc6"
+        }
+    },
+    "settings": {
+        "scaling_algorithm": "Mitchell",
+        "error_on_image_too_small": false
+    }
+}

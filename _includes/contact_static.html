@@ -1,0 +1,113 @@
+<!-- Contact Section -->
+<section id="signup">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Sign-up today!</h2>
+				<hr class="inbox-primary">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<form action="//{{ site.mailchimp.form_url }}/subscribe/post?u={{ site.mailchimp.user_id }}&amp;id={{ site.mailchimp.list_id }}" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" id="contactForm" novalidate>
+				{% if page.mailchimp.org == "church" %}
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label for="mce-CHURCH">Full Church Name</label>
+							<input type="text" name="CHURCH" class="form-control" placeholder="Full Church Name {% if page.mailchimp.church_example %}(e.g. {{ page.mailchimp.church_example }}){% endif %}" id="name" required data-validation-required-message="Please enter your Church's full name as it appears on <a href='//www.eadventist.net/search/search?org={% if page.mailchimp.eadventist_orgcode %}{{ page.mailchimp.eadventist_orgcode }}{% endif %}&class=2&type=L' target='_blank'>eAdventist</a>.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+				{% elsif page.mailchimp.org == "school" %}
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label for="mce-SCHOOL">Full School Name</label>
+							<input type="text" name="SCHOOL" class="form-control" placeholder="Full School Name {% if page.mailchimp.school_example %}(e.g. {{ page.mailchimp.school_example }}){% endif %}" id="name" required data-validation-required-message="Please enter your School's full name as it appears on <a href='//www.eadventist.net/search/search?org={% if page.mailchimp.eadventist_orgcode %}{{ page.mailchimp.eadventist_orgcode }}{% endif %}&class=3&type=L' target='_blank'>eAdventist</a>.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+				{% else %}
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label for="mce-FNAME">First Name</label>
+							<input type="text" name="FNAME" class="form-control" placeholder="First Name" id="name" required data-validation-required-message="Please enter your first name.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label for="mce-LNAME">Last Name</label>
+							<input type="text" name="LNAME" class="form-control" placeholder="Last Name" id="name" required data-validation-required-message="Please enter your last name.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+				{% endif %}
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label for="mce-EMAIL">Email Address</label>
+							<input type="email" name="EMAIL" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+				{% if page.mailchimp.show_conf == "true" %}
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label for="mce-CONF">Conference</label>
+							<select name="CONF" class="form-control" id="name" required data-validation-required-message="Please select your local conference.">
+								<option>Conference</option>
+								{% if page.mailchimp.CONF1 %}
+								<option value="{{ page.mailchimp.CONF1 }}">{{ page.mailchimp.CONF1 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF3 %}
+								<option value="{{ page.mailchimp.CONF2 }}">{{ page.mailchimp.CONF2 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF3 %}
+								<option value="{{ page.mailchimp.CONF3 }}">{{ page.mailchimp.CONF3 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF4 %}
+								<option value="{{ page.mailchimp.CONF4 }}">{{ page.mailchimp.CONF4 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF5 %}
+								<option value="{{ page.mailchimp.CONF5 }}">{{ page.mailchimp.CONF5 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF6 %}
+								<option value="{{ page.mailchimp.CONF6 }}">{{ page.mailchimp.CONF6 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF7 %}
+								<option value="{{ page.mailchimp.CONF7 }}">{{ page.mailchimp.CONF7 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF8 %}
+								<option value="{{ page.mailchimp.CONF8 }}">{{ page.mailchimp.CONF8 }}</option>
+								{% endif %}
+								{% if page.mailchimp.CONF9 %}
+								<option value="{{ page.mailchimp.CONF9 }}">{{ page.mailchimp.CONF9 }}</option>
+								{% endif %}
+							</select>
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+				{% endif %}
+					<div id="mce-responses" class="clear">
+						<p class="help-block text-danger" id="mce-error-response" style="display:none"></p>
+						<p class="help-block text-success" id="mce-success-response" style="display:none"></p>
+					</div>
+					<div>
+						<input type="hidden"  name="SIGNUP" value="{% if page.page_name %}{{ page.page_name }}{% else %}{{ site.title }}{% endif %}">
+						<input type="hidden"  name="TYPE" value="{{ page.mailchimp.TYPE }}">
+						<input type="text" name="_gotcha" style="display:none" />
+					</div>
+					<br>
+					<div style="font-size:12px;">By clicking “Subscribe” you agree to let us send you the <em>{{ site.title}}</em>. We will not sell, rent, or distribute your information. If you are ever unhappy, you will be able to easily unsubscribe.</div>
+					<br>
+					<div id="success"></div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_{{ site.mailchimp.user_id }}_{{ site.mailchimp.list_id }}" tabindex="-1" value=""></div>
+							<button type="submit" name="subscribe" class="btn btn-success btn-lg">Subscribe</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

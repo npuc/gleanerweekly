@@ -1,0 +1,15 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+	<msapplication>
+		<tile>
+			<square70x70logo src="{{ site.mstile.square70x70logo }}{% if site.favicon-version %}?v={{ site.favicon-version }}{% endif %}"/>
+			<square150x150logo src="{{ site.mstile.square150x150logo }}{% if site.favicon-version %}?v={{ site.favicon-version }}{% endif %}"/>
+			<square310x310logo src="{{ site.mstile.square310x310logo }}{% if site.favicon-version %}?v={{ site.favicon-version }}{% endif %}"/>
+			<wide310x150logo src="{{ site.mstile.wide310x150logo }}{% if site.favicon-version %}?v={{ site.favicon-version }}{% endif %}"/>
+			<TileColor>#{{ site.msapplication-TileColor }}</TileColor>
+		</tile>
+	</msapplication>
+</browserconfig>

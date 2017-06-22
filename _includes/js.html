@@ -1,0 +1,57 @@
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{{ "/js/jquery-1.11.0.js" }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ "/js/bootstrap.min.js" }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ "/js/jquery.easing.min.js" }}"></script>
+    <script src="{{ "/js/classie.js" }}"></script>
+    <script src="{{ "/js/cbpAnimatedHeader.js" }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{ "/js/jqBootstrapValidation.js" }}"></script>
+    {% if site.contact == "static" %}
+    <script src="{{ "/js/contact_me_static.js" }}"></script>
+    {% else %}
+     <script src="{{ "/js/contact_me.js" }}"></script>
+    {% endif %}
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ "/js/freelancer.js" }}"></script>
+
+    <!-- JavaScript for MailChimp Validation -->
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='SCREENNAME';ftypes[3]='text';fnames[4]='HANDLE';ftypes[4]='text';fnames[5]='SIGNUP';ftypes[5]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    <!-- End MailChimp JavaScript Validation -->
+
+    {% if site.twitter_ua_tag %}
+    <!-- Twitter universal website tag code -->
+    <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+    <script type="text/javascript">twttr.conversion.trackPid('{{ site.twitter_ua_tag }}', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="//analytics.twitter.com/i/adsct?txn_id={{ site.twitter_ua_tag }}&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id={{ site.twitter_ua_tag }}&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+    </noscript>
+    <!-- End Twitter universal website tag code -->
+    {% endif %}
+
+    {% if page.show_mc_popup == "true" %}
+    <!-- MailChimp Pop-up Form -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us6.list-manage.com","uuid":"08d79fe6ae01ad05827cf29bb","lid":"8f9cae1547"}) })</script>
+    <!-- End MailChimp Pop-up Form -->
+    {% endif %}
+
+    <!-- JavaScript to open RSS items in Bootstrap Modal on site -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('a.recent-link').on('click', function(e) {
+                var src = $(this).attr('data-src');
+
+                $("#portfolioModal iframe").attr({
+                    'src': src
+                });
+            });
+
+        });
+    </script>
+    <!-- End JavaScript RSS Bootstrap Modal -->

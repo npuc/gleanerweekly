@@ -1,0 +1,210 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{% if page.page_descrption %}{{ page.page_descrption }}{% else %}{{ site.description }}{% endif %}">
+    {% if site.meta_author %}<meta name="author" content="{{ site.meta_author }}">{% endif %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+   {% if site.addtohomescreen == "yes" %}
+    <!-- AddToHomeScreen -->
+    <link rel="stylesheet" type="text/css" href="/css/addtohomescreen.css">
+    <script src="/js/addtohomescreen.js"></script>
+    <script>
+        addToHomescreen({
+            // message: ,
+            skipFirstVisit: true,
+            maxDisplayCount: 2
+        });
+    </script>
+    <!-- End AddToHomeScreen -->
+    {% endif %}
+
+    <!-- Favicon Generate from http://realfavicongenerator.net/ -->
+    {% if site.favicon.apple-touch-icon-57x57 %}<link rel="apple-touch-icon" sizes="57x57" href="{{ site.favicon.apple-touch-icon-57x57 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-60x60 %}<link rel="apple-touch-icon" sizes="60x60" href="{{ site.favicon.apple-touch-icon-60x60 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-72x72 %}<link rel="apple-touch-icon" sizes="72x72" href="{{ site.favicon.apple-touch-icon-72x72 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-76x76 %}<link rel="apple-touch-icon" sizes="76x76" href="{{ site.favicon.apple-touch-icon-76x76 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-114x114 %}<link rel="apple-touch-icon" sizes="114x114" href="{{ site.favicon.apple-touch-icon-114x114 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-120x120 %}<link rel="apple-touch-icon" sizes="120x120" href="{{ site.favicon.apple-touch-icon-120x120 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-144x144 %}<link rel="apple-touch-icon" sizes="144x144" href="{{ site.favicon.apple-touch-icon-144x144 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-152x152 %}<link rel="apple-touch-icon" sizes="152x152" href="{{ site.favicon.apple-touch-icon-152x152 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.apple-touch-icon-180x180 %}<link rel="apple-touch-icon" sizes="180x180" href="{{ site.favicon.apple-touch-icon-180x180 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.32x32 %}<link rel="icon" type="image/png" href="{{ site.favicon.32x32 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}" sizes="32x32">{% endif %}
+    {% if site.favicon.194x194 %}<link rel="icon" type="image/png" href="{{ site.favicon.194x194 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}" sizes="194x194">{% endif %}
+    {% if site.favicon.96x96 %}<link rel="icon" type="image/png" href="{{ site.favicon.96x96 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}" sizes="96x96">{% endif %}
+    {% if site.android-chrome-192x192 %}<link rel="icon" type="image/png" href="{{ site.android-chrome-192x192 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}" sizes="192x192">{% endif %}
+    {% if site.favicon.16x16 %}<link rel="icon" type="image/png" href="{{ site.favicon.16x16 }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}" sizes="16x16">{% endif %}
+    {% if site.favicon.manifest %}<link rel="manifest" href="{{ site.favicon.manifest }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.favicon.safari-pinned-tab %}<link rel="mask-icon" href="{{ site.favicon.safari-pinned-tab }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}" color="#{{ site.favicon.safari-pinned-tab-color }}">{% endif %}
+    {% if site.favicon.default %}<link rel="shortcut icon" href="{{ site.favicon.default }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    <meta name="apple-mobile-web-app-title" content="{% if site.apple-mobile-web-app-title %}{{ site.apple-mobile-web-app-title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="application-name" content="{% if site.application-name %}{{ site.application-name }}{% else %}{{ site.title }}{% endif %}">
+    {% if site.msapplication-TileColor %}<meta name="msapplication-TileColor" content="#{{ site.msapplication-TileColor }}">{% endif %}
+    {% if site.msapplication-TileImage %}<meta name="msapplication-TileImage" content="{{ site.msapplication-TileImage }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.msapplication-config %}<meta name="msapplication-config" content="{{ site.msapplication-config }}{% if site.favicon.version %}?v={{ site.favicon.version }}{% endif %}">{% endif %}
+    {% if site.theme-color %}<meta name="theme-color" content="#{{ site.theme-color }}">{% endif %}
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- End Favicon -->
+
+    <!-- Apple Startup Images -->
+    <style>
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+    </style>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    {% if site.apple-touch-startup-image.1536x2008 %}<!-- iPad retina portrait startup image -->
+    <link href="{{ site.apple-touch-startup-image.1536x2008 }}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.1496x2048 %}<!-- iPad retina landscape startup image -->
+    <link href="{{ site.apple-touch-startup-image.1496x2048 }}" media="(device-width: 768px) and (device-height: 1024px)and (-webkit-device-pixel-ratio: 2)and (orientation: landscape)"rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.768x1004 %}<!-- iPad non-retina portrait startup image -->
+    <link href="{{ site.apple-touch-startup-image.768x1004 }}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.748x1024 %}<!-- iPad non-retina landscape startup image -->
+    <link href="{{ site.apple-touch-startup-image.748x1024 }}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.1242x2148 %}<!-- iPhone 6 Plus portrait startup image -->
+    <link href="{{ site.apple-touch-startup-image.1242x2148 }}" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.1182x2208 %}<!-- iPhone 6 Plus landscape startup image -->
+    <link href="{{ site.apple-touch-startup-image.1182x2208 }}" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.750x1294 %}<!-- iPhone 6 startup image -->
+    <link href="{{ site.apple-touch-startup-image.750x1294 }}" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.640x1096 %}<!-- iPhone 5 startup image -->
+    <link href="{{ site.apple-touch-startup-image.640x1096 }}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.640x920 %}<!-- iPhone < 5 retina startup image -->
+    <link href="{{ site.apple-touch-startup-image.640x920 }}" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">{% endif %}
+
+    {% if site.apple-touch-startup-image.320x460 %}<!-- iPhone < 5 non-retina startup image -->
+    <link href="{{ site.apple-touch-startup-image.320x460 }}" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">{% endif %}
+    <!-- End Apple Startup Images -->
+
+    {% if site.amp == "yes" %}
+    <!-- Jekyll plugin for creating Accelerated Mobile Page -->
+    <link rel="amphtml" href="{{ page.id | append:'/index.html' | prepend: site.baseurl | prepend: site.url }}">
+      <style amp-custom>
+      amp-img {
+        background-color: grey;
+        }
+      </style>
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+    {% endif %}
+
+    <!-- twitter card -->
+    <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:site" content="@{{ site.twitter_username }}">
+    <meta name="twitter:creator" content="@{{ site.twitter_username }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.image %}<meta name="twitter:image:src" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}">{% endif %}
+    <!-- end twitter card -->
+
+    <!-- Pinterest Rich Pins -->
+    <meta name="pinterest-rich-pin" content="true" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
+    <meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:site_name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="article:published_time" content="{{ site.time | date_to_xmlschema }}" />
+    <meta property="article:modified_time" content="{{ site.time | date_to_xmlschema }}" />
+    <meta property="article:section" content="Article Section" />
+    <meta property="article:publisher" content="{{ site.facebook_url }}" />
+    <meta property="article:tag" content="Article Tag" />
+    {% if site.facebook_url %}<meta property="article:author" content="{{ site.facebook_url }}" />{% endif %}
+    <meta property="article:author" content="{% if site.meta_author %}{{ site.meta_author }}{% else %}{{ site.title }}{% endif %}" />
+    {% for fb_admins in site.fb_admins %}<meta property="fb:admins" content="{{ fb_admins.id }}" />
+    {% endfor %}
+    {% if site.fb_app_id %}<meta property="fb:app_id" content="{{ site.fb_app_id }}" />{% endif %}
+
+    {% if site.google_analytics.UA %}
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{{ site.google_analytics.UA }}', '{{ site.google_analytics.domains }}');
+      ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+    {% endif %}
+
+    {% if site.fb_pixel %}
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '{{ site.fb_pixel }}');
+    fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id={{ site.fb_pixel }}&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    {% endif %}
+
+    <!-- Update your html tag to include the itemscope and itemtype attributes. -->
+    <div itemscope itemtype="//schema.org/WebSite">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop='inLanguage' content='en-US'/>
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta itemprop="name headline" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta itemprop="description" content="{% if page.page_descrption %}{{ page.page_descrption }}{% else %}{{ site.description }}{% endif %}" />
+    <meta itemprop="datePublished" content="{{ site.time | date_to_xmlschema }}" />
+<!--     <meta itemprop="author" content="{{ site.google_plus_url }}" />
+    <meta itemprop="publisher" content="{{ site.google_plus_url }}" /> -->
+    <meta itemprop="headline" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta itemprop="url" href="{{ page.url | replace:'index.html','' | prepend: site.url }}"/>
+    {% if page.image %}<meta itemprop="image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}" />{% endif %}
+
+    <!-- Oh great and mighty search enginge Robots, hear my powerful roar! -->
+     {% if site.googlebot %}<meta name="googlebot" content="{{ site.googlebot }}" />{% endif %}
+     {% if site.robots %}<meta name="robots" content="{{ site.robots }}" />{% endif %}
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="{{ "/css/style.css" }}">
+
+    <!-- Google verification -->
+    {% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
+
+    <!-- Bing Verification -->
+    {% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" }}">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- YUI JS for RSS gfeedfetcher and display -->
+    <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+    <!-- gfeedfetcher: Displays RSS feed -->
+    <script type="text/javascript" src="/js/gfeedfetcher.js"></script>
+</head>

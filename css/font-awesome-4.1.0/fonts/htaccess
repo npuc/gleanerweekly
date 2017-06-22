@@ -1,0 +1,8 @@
+---
+layout:
+permalink: css/font-awesome-4.1.0/fonts/.htaccess
+---
+RewriteEngine On
+RewriteOptions inherit
+Options -Indexes
+ErrorDocument 403 /404
