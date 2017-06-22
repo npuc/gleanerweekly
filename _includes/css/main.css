@@ -572,6 +572,39 @@ footer .footer-below {
     color: #{{ site.color.secondary }}; 
 }
 
+@media (min-width:1px) {
+  .recent-rss-link-title {
+    font-size: 18px;
+  }
+  .recent-rss-link-title p {
+    font-size: 14px;
+  }
+}
+@media (min-width:768px) {
+  .recent-rss-link-title {
+    font-size: 11px;
+  }
+  .recent-rss-link-title p {
+    font-size: 10px;
+  }
+}
+@media (min-width:992px) {
+  .recent-rss-link-title {
+    font-size: 14px;
+  }
+  .recent-rss-link-title p {
+    font-size: 12px;
+  }
+}
+@media (min-width:1200px) {
+  .recent-rss-link-title {
+    font-size: 18px;
+  }
+  .recent-rss-link-title p {
+    font-size: 14px;
+  }
+}
+
 .recent-rss-link-title a:link, 
 .recent-rss-link-title a:visited, 
 .recent-rss-link-title a:hover
