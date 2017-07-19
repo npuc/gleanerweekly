@@ -178,10 +178,10 @@ mailchimp:
   archive_url: us6.campaign-archive2.com
 
 rss:
-  #Is this feed from Mailchimp? If it is, use "yes" in the mailchimp field below. Otherwise, leave blank.
+  #Is this feed from Mailchimp? If it is, use "yes" in the mailchimp field below. Otherwise, leave blank. MailChimps RSS feed is really finicky and doesn't always work.
   mailchimp: "yes"
   #RSS feed url. If the feed is from MailChimp, the RSS feed will automatically be entered if rss.mailchimp field, above, is set to "yes". If this is not a MailChimp feed, leave rss.mailchimp field blank and enter the feed URL below in the rss.feed field.
-  feed: 
+  feed: http://gleanernow.com/rss/main.xml
   #Atom feed. Use "yes" to if the feed is an Atom feed. Otherwise, leave blank.
   atom: 
   #Sort the RSS feed items by ... "date" or "title".

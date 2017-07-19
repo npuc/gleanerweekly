@@ -38,7 +38,7 @@
 			"density": 4
 		}
 	],
-	"start_url": "http:\/\/gleanerweekly.com",
+	"start_url": "http:\/\/gleanerweekly.com\/#recent",
 	"background_color": "#5a5a5a",
 	"theme_color": "#5a5a5a",
 	"display": "standalone"
